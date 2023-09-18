@@ -13,7 +13,21 @@ class Solution
     public static void sort012(int a[], int n)
     {
         // code here 
-         Arrays.sort(a);
+        TreeMap<Integer, Integer> countMap = new TreeMap<>();
+        for (int num : a) {
+            countMap.put(num, countMap.getOrDefault(num, 0) + 1);
+        }
+
+        int index = 0;
+        for (Map.Entry<Integer, Integer> entry : countMap.entrySet()) {
+            int key = entry.getKey();
+            int count = entry.getValue();
+            
+            for (int i = 0; i < count; i++) {
+                a[index] = key;
+                index++;
+            }
+        }
     }
 }
 
