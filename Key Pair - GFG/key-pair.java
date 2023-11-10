@@ -38,13 +38,13 @@ public class Main {
 class Solution {
     boolean hasArrayTwoCandidates(int arr[], int n, int x) {
         // code here
-        HashMap<Integer, Integer> hm = new HashMap<>();
-        for (int i = 0; i < n; i++) {
-            int t = x - arr[i];
-            if (hm.containsKey(t)) {
+        HashMap<Integer,Integer> hm = new HashMap<>();
+        for(int i=0;i<n;i++){
+            int t=x-arr[i];
+            if(hm.containsKey(t)){
                 return true;
             }
-            hm.put(arr[i], i);
+            hm.put(arr[i],i);
         }
         return false;
     }
